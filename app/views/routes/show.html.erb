@@ -2,5 +2,15 @@
   <strong>Title:</strong>
   <%= @route.title %>
 </p>
+
+<p>
+  <strong>Поезда на маршруте:</strong>
+  <% if @route.trains.present? %>
+  	<%= @route.trains.number %>
+  <% else %>
+ 	Поездов нет
+ <% end %>
+</p>
+
 <%= link_to 'Edit', edit_route_path(@route) %> 
 <%= link_to 'Back', routes_path %>
