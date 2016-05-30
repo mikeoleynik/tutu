@@ -6,6 +6,11 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
+
+  <div class="field">
+  	<%= f.label :train, "Назначить маршрут" %>
+    <%= f.collection_select :train_ids, Train.all, :id, :number %>
+  </div>
  
   <p>
     <%= f.submit %>
