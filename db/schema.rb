@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20160525102109) do
     t.integer  "number"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "railway_stations_id"
     t.integer  "current_station_id_id"
-    t.integer  "route_id"
   end
 
   create_table "users", force: :cascade do |t|
