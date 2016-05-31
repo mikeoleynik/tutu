@@ -1,0 +1,18 @@
+<%= form_for(@carriage) do |f| %>
+
+<%= render 'common/errors', resource: @carriage %>
+
+  <p>
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </p>
+
+  <div class="field">
+    <%= f.label :train, "Назначить поезд" %>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+    <p>
+    <%= f.submit %>
+  </p>
+<% end %>

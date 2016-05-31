@@ -1,0 +1,16 @@
+<p>
+  <strong>Number:</strong>
+  <%= @carriage.number %>
+</p>
+
+<p>
+  <strong>Поезд:</strong>
+  <% if @carriage.train.present? %>
+  	<%= @carriage.train.number %>
+  <% else %>
+ 	Поезд не назначен
+ <% end %>
+</p>
+
+<%= link_to 'Edit', edit_carriage_path(@carriage) %> 
+<%= link_to 'Back', carriages_path %>

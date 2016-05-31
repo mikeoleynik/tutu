@@ -1,0 +1,18 @@
+<h1>Listing Carriage</h1>
+<%= link_to 'New carriage', new_carriage_path %>
+<table>
+  <tr>
+    <th>Number</th>
+  </tr>
+ 
+  <% @carriage.each do |carriage| %>
+    <tr>
+      <td><%= carriage.number %></td>
+      <td><%= link_to 'Show', carriage_path(carriage) %></td>
+      <td><%= link_to 'Edit', edit_carriage_path(carriage) %></td>
+      <td><%= link_to 'Destroy', carriage_path(carriage),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

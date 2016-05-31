@@ -1,0 +1,3 @@
+class ComfortCarriagesController < CarriagesController
+
+end
