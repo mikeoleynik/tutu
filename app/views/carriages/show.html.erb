@@ -1,15 +1,20 @@
+
+<h1>Вагон №<%= @carriage.number %></h1>
+
 <p>
-  <strong>Number:</strong>
-  <%= @carriage.number %>
+  Поезд: <%= @carriage.train.number %>
 </p>
 
 <p>
-  <strong>Поезд:</strong>
-  <% if @carriage.train.present? %>
-  	<%= @carriage.train.number %>
-  <% else %>
- 	Поезд не назначен
- <% end %>
+  Верхних сидений: <%= @carriage.up_places %>
+</p>
+
+<p>
+  Нижних сидений: <%= @carriage.lower_places %>
+</p>
+
+<p>
+  Тип: <%= @carriage %>
 </p>
 
 <%= link_to 'Edit', edit_carriage_path(@carriage) %> 

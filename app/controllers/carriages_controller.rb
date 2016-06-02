@@ -25,6 +25,8 @@ class CarriagesController < ApplicationController
     end
   end
 
+
+
   def update 
     if @carriage.update(carriage_params)
       redirect_to @carriage
