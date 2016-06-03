@@ -5,7 +5,7 @@ class CreateCarriages < ActiveRecord::Migration
       t.integer :up_places
       t.integer :lower_places
       t.belongs_to :train
-      t.string :type
+      t.string :type_car
 
       t.timestamps null: false
     end
