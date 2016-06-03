@@ -1,5 +1,5 @@
 class CarriagesController < ApplicationController
-before_action :set_train, only: [:new, :create]
+  before_action :set_train, only: [:new, :create]
 
   def new
     @carriage = Carriage.new
@@ -26,6 +26,6 @@ before_action :set_train, only: [:new, :create]
   end
 
   def carriage_params
-    params.require(:carriage).permit(:number, :train_id, :up_places, :lower_places)
+    params.require(:carriage).permit(:number, :train_id, :up_places, :lower_places, :type)
   end
 end
