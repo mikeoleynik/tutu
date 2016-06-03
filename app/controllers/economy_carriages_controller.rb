@@ -1,3 +1,0 @@
-class EconomyCarriagesController < CarriagesController
-
-end
