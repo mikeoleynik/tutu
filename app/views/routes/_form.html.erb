@@ -8,7 +8,7 @@
   </p>
 
   <div class="field">
-  	<%= f.label :train, "Назначить маршрут" %>
+  	<%= f.label :train, "Поезд" %>
     <%= f.collection_select :train_ids, Train.all, :id, :number %>
   </div>
  
