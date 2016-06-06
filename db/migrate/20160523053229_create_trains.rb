@@ -5,5 +5,8 @@ class CreateTrains < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_column :trains, :head, :boolean
+    add_column :trains, :tail, :boolean
   end
 end

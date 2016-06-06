@@ -8,13 +8,15 @@ class Carriage < ActiveRecord::Base
 
   belongs_to :train
 
-  before_validation :serial_number, on: :create # используя колбеки
+  before_validation :serial_number, on: :create 
 
-  # scope ordered, -> { order(:number)}
+  scope ordered, -> { order(:number)}
 
   private
 
-  def serial_number # проверить поезд не нил через if
-    self.number = train.carriages.maximum(:number) + 1 # можно ли в метод скоуп? default_scope { order(:number)}
+  def serial_number # как сделать через блок
+    self.number = train.carriages.maximum(:number) + 1 if @train.nil?
   end
 end
+
+ 
