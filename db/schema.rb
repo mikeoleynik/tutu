@@ -15,12 +15,9 @@ ActiveRecord::Schema.define(version: 20160531181521) do
 
   create_table "carriages", force: :cascade do |t|
     t.integer  "number"
-    t.integer  "up_places"
-    t.integer  "lower_places"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "train_id"
-    t.string   "type_car"
   end
 
   create_table "railway_stations", force: :cascade do |t|
@@ -55,7 +52,6 @@ ActiveRecord::Schema.define(version: 20160531181521) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "current_station_id_id"
-    t.integer  "route_id"
   end
 
   create_table "users", force: :cascade do |t|
