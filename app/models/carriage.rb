@@ -7,11 +7,13 @@ class Carriage < ActiveRecord::Base
   
   belongs_to :train
 
-  after_validation :serial_number
+  after_validation :serial_number # используя колбеки
+
+  # scope ordered, -> { order(:number)}
 
   private
 
   def serial_number
-    self.number = Carriage.maximum(:number) + 1 # через ключ значение? вывсти во вьюхе || default_scope { order(:number)}
+    self.number = Carriage.maximum(:number) + 1 # можно ли в метод скоуп? default_scope { order(:number)}
   end
 end

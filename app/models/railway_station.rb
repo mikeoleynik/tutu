@@ -4,4 +4,6 @@ class RailwayStation < ActiveRecord::Base
   has_many :routes, through: :railway_stations_routes
 
   validates :title, presence: true
+
+  scope ordered, -> { order(:number) } # это вывод станций по поряд.номеру. откуда взять :number? написать метод
 end
