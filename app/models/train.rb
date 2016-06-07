@@ -7,10 +7,6 @@ class Train < ActiveRecord::Base
   validates :number, presence: true
 
   def sort_carriages
-    if self.sort
-      carriages.ascending
-    else
-      carriages.descending
-    end
+    head ? carriages.order(:number) : carriages.order('number DESC')
   end
 end
