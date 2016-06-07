@@ -4,6 +4,17 @@
 </p>
 
 <p>
+  <strong>Станциии в саршруте:</strong>
+  <% if @route.railway_stations.empty? %>
+  <p>Станций нет</p>
+  	<% else %>
+  	<% @route.railway_stations.each do |st| %>
+  <li><%= st.title %></li>
+ 	<%end%>
+ <% end %>
+</p>
+
+<p>
   <strong>Поезда на маршруте:</strong>
   <% if @route.trains.empty? %>
   <p>Поездов нет</p>
