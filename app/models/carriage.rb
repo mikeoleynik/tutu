@@ -10,12 +10,14 @@ class Carriage < ActiveRecord::Base
 
   before_validation :serial_number, on: :create 
 
-  scope ordered, -> { order(:number)}
+  # scope ordered, -> { order(:number)}
 
   private
 
-  def serial_number # как сделать через блок
-    self.number = train.carriages.maximum(:number) + 1 if @train.nil?
+  def serial_number
+    return unless train
+    self.number ||= train.carriages.maximum(:number)
+    self.number = number + 1
   end
 end
 
