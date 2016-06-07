@@ -8,7 +8,7 @@ class Carriage < ActiveRecord::Base
 
   belongs_to :train
 
-  before_validation :serial_number, on: :create 
+  after_validation :serial_number, on: :create 
 
   scope :ordered, -> { order(:number) }
   scope :ordered_desc, -> { order('number DESC') }
@@ -16,7 +16,6 @@ class Carriage < ActiveRecord::Base
   private
 
   def serial_number
-    return unless train
     self.number = train.carriages.maximum(:number) + 1
   end
 end
