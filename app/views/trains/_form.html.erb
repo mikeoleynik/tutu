@@ -9,7 +9,7 @@
 
   <div class="field">
   	<%= f.label :route, "Назначить маршрут" %>
-	  <%= f.collection_select :route_id, Route.all, :id, :title %>
+	  <%= f.collection_select :route, Route.all, :id, :title %>
   </div>
 
   <div class="actions">
