@@ -1,3 +1,3 @@
 class EconomyCarriage < Carriage
-  validates :side_up_places, :side_lower_places, presence: true
+  validates :up_places, :lower_places, :side_up_places, :side_lower_places, presence: true
 end
