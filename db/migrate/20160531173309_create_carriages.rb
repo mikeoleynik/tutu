@@ -1,7 +1,7 @@
 class CreateCarriages < ActiveRecord::Migration
   def change
     create_table :carriages do |t|
-      t.string :type_car
+      t.string :type
       t.integer :number
       t.integer :up_places
       t.integer :lower_places
