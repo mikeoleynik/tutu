@@ -14,6 +14,16 @@
       <%= f.number_field :lower_places %>
     </div>
 
+       <div class="field">
+      <%= f.label :side_up_places %><br>
+      <%= f.number_field :side_up_places %>
+    </div>
+
+       <div class="field">
+      <%= f.label :side_lower_places %><br>
+      <%= f.number_field :side_lower_places %>
+    </div>
+
     <div class="field">
       <%= f.label :type_car %><br>
       <%= f.text_field :type_car %>
@@ -22,3 +32,4 @@
     <div class="actions">
       <%= f.submit "Создать" %>
     </div>
+    <% end %>
