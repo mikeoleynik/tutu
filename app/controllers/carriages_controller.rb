@@ -1,6 +1,9 @@
 class CarriagesController < ApplicationController
   before_action :set_train, only: [:new, :create]
 
+  def index
+  end
+
   def new
     @carriage = Carriage.new
   end
@@ -26,6 +29,6 @@ class CarriagesController < ApplicationController
   end
 
   def carriage_params
-    params.require(:carriage).permit(:number, :train_id, :up_places, :lower_places, :type_car)
+    params.require(:carriage).permit(:number, :train_id, :up_places, :lower_places, :side_up_places, :side_lower_places, :sit_places, :type_car)
   end
 end
