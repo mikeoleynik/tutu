@@ -1,9 +1,6 @@
 class CarriagesController < ApplicationController
   before_action :set_train, only: [:new, :create]
 
-  def index
-  end
-
   def new
     @carriage = Carriage.new
   end

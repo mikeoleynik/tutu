@@ -1,27 +1,21 @@
 <h1>Новый вагон</h1>
 
-<%= form_for [@train, @carriage] do |f| %>
-    <div class="field">
-      <%= f.label :number %><br>
-      <%= f.text_field :number %>
-    </div>
-
-    <div class="field">
-      <%= f.label :up_places %><br>
-      <%= f.number_field :up_places %>
-    </div>
-
-    <div class="field">
-      <%= f.label :lower_places %><br>
-      <%= f.number_field :lower_places %>
-    </div>
-
-    <div class="field">
-      <%= f.label :type_car %><br>
-      <%= f.text_field :type_car %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Создать" %>
-    </div>
+<% if params: { type_car: 'ComfortCarriage' } %>
+  <%= render 'comfort_carriage' %>
 <% end %>
+<p><%= link_to 'Купе', new_train_carriage_path, type_car: 'ComfortCarriage' %></p>
+
+<% if params[ type_car: 'EconomyCarriage' ] %>
+  <%= render 'comfort_carriage' %>
+<% end %>
+<p><%= link_to 'Плацкарт', new_train_carriage_path, type_car: 'EconomyCarriage' %></p>
+
+<% if params[ type_car: 'SitCarriage' ] %>
+  <%= render 'comfort_carriage' %>
+<% end %>
+<p><%= link_to 'Сидячий', new_train_carriage_path, type_car: 'SitCarriage' %></p>
+
+<% if params[ type_car: 'SvCarriage' ] %>
+  <%= render 'comfort_carriage' %>
+<% end %>
+<p><%= link_to 'СВ', new_train_carriage_path, type_car: 'SvCarriage' %></p>
