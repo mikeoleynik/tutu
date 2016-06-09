@@ -9,6 +9,7 @@ class Carriage < ActiveRecord::Base
 
   private
   def set_number
-    self.number = train.carriages.maximum(:number) + 1
+    number = train.carriages.maximum(:number)
+    self.number = number.nil? ? 1 : number + 1
   end
 end
