@@ -14,18 +14,26 @@
   <% end %>
 </p>
 
+<p>
+  <%= link_to "Добавить вагон", new_train_carriage_path(@train) %>
+</p>
 
 <p>
   <strong>Вагоны</strong>
+  
+  <% if @carriages = @train.is_head %>
+    <% @train.carriages.ordered %>
+  <% end %>
+  
+  <% if @carriages = @train.tail %>
+    <% @train.carriages.ordered_desc %>
+  <% end %>
+  
   <ul>
     <% @train.carriages.each do |car| %>
       <li><%= link_to "Вагон №#{car.number}", car %></li>
     <% end %>
   </ul>
-</p>
-
-<p>
-  <%= link_to "Добавить вагон", new_train_carriage_path(@train) %>
 </p>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |

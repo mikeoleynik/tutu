@@ -12,6 +12,11 @@
   	  <%= f.collection_select :route, Route.all, :id, :title %>
     </div>
 
+    <div class="field">
+      <%= label_tag :is_head, "C головы" %>
+      <%= check_box_tag :is_head %>
+    </div>
+
     <div class="actions">
       <%= f.submit %>
     </div>
