@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531173309) do
+ActiveRecord::Schema.define(version: 20160610063039) do
 
   create_table "carriages", force: :cascade do |t|
     t.string   "type"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20160531173309) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "current_station_id_id"
+    t.boolean  "is_head"
+    t.boolean  "tail"
   end
 
   create_table "users", force: :cascade do |t|
