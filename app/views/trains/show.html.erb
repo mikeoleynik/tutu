@@ -6,15 +6,6 @@
 </p>
 
 <p>
-  <strong>На станции:</strong>
-  <% if @train.current_station.present? %>
-    <%= @train.current_station.title %>
-  <% else %>
-    Не указано
-  <% end %>
-</p>
-
-<p>
   <strong>Маршрут поезда:</strong>
   <% if @train.route.present? %>
   	<%= @train.route.title %>
@@ -30,17 +21,14 @@
 <p>
   <strong>Вагоны</strong>
 
-
-  
   <ul>
     <% @train.carriages.each do |car| %>
-      <% if @train.is_head %>
-    <% @train.car.ordered %>
-  <% end %>
-  
-  <% if @train.tail %>
-    <% @train.car.ordered_desc %>
-  <% end %>
+
+      <% if @train.is_head == true %>
+        <% @train.carriages.order %>
+      <% else %>
+        <% @train.carriages.order(number: :desc) %>
+      <% end %>
       <li><%= link_to "Вагон №#{car.number}", car %></li>
     <% end %>
   </ul>
