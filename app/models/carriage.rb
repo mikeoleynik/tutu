@@ -1,5 +1,6 @@
 class Carriage < ActiveRecord::Base
   TYPES = %w(ComfortCarriage EconomyCarriage SitCarriage SvCarriage)
+  
   validates :type_car, presence: true, inclusion: { in: TYPES }
   validates :number, uniqueness: { scope: :train_id }
   

@@ -1,14 +1,14 @@
 <%= form_for(@user) do |f| %>
 
-<%= render 'common/errors', resource: @user %>
- 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+	<%= render 'common/errors', resource: @user %>
+	 
+	  <p>
+	    <%= f.label :title %><br>
+	    <%= f.text_field :title %>
+	  </p>
+	 
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	 
 <% end %>

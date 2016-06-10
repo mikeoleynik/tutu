@@ -3,6 +3,7 @@ class CreateTrains < ActiveRecord::Migration
     create_table :trains do |t|
       t.integer :number
 
+
       t.timestamps null: false
     end
   end
