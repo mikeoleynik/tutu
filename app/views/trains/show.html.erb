@@ -6,15 +6,6 @@
 </p>
 
 <p>
-  <strong>Маршрут поезда:</strong>
-  <% if @train.route.present? %>
-  	<%= @train.route.title %>
-  <% else %>
- 	  Маршрут не назначен
-  <% end %>
-</p>
-
-<p>
   <%= link_to "Добавить вагон", new_train_carriage_path(@train) %>
 </p>
 

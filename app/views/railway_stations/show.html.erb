@@ -7,12 +7,12 @@
 
 <p>
 <% if @railway_station.routes.empty? %>
-  Станция не входит ни в один маршрут
+  <p>Станция не входит ни в один маршрут</p>
 <% else %>
   <p> Станция входит в следующие маршруты:</p>
   <ul>
     <% @railway_station.routes.each do |route| %>
-      <li><% route.title %></li>
+      <li><%= route.title %></li>
      <% end %>
   </ul>
 <% end %>

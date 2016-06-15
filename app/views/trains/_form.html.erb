@@ -8,11 +8,6 @@
     </div>
   
     <div class="field">
-    	<%= f.label :route, "Назначить маршрут" %>
-  	  <%= f.collection_select :route, Route.all, :id, :title %>
-    </div>
-
-    <div class="field">
       <%= f.label :is_head, "C головы" %>
       <%= f.check_box :is_head %>
     </div> 
