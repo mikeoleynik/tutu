@@ -22,15 +22,15 @@
   <strong>Вагоны</strong>
 
   <ul>
-    <% @train.carriages.each do |car| %>
-      <% if @train.is_head == true %>
-        <% @train.carriages.order(:number) %>
-      <% else %>
-        <% @train.carriages.order(number: :desc) %>
-      <% end %>
-
+  <% if @train.is_head? %>
+    <% @train.carriages.order(:number).each do |car| %>      
       <li><%= link_to "Вагон №#{car.number}", car %></li>
     <% end %>
+  <% else %>
+    <% @train.carriages.order(number: :desc).each do |car| %>
+      <li><%= link_to "Вагон №#{car.number}", car %></li>
+    <% end %>
+  <% end %>
   </ul>
 </p>
 
