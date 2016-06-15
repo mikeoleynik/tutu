@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 20160610063039) do
 
   create_table "trains", force: :cascade do |t|
     t.integer  "number"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.integer  "current_station_id_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "current_station_id"
     t.boolean  "is_head"
     t.boolean  "tail"
   end
