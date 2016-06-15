@@ -13,7 +13,17 @@
   <%end%>
  <% end %>
 </p>
-<!-- Сделать поезда на маршруте -->
+
+<p>
+  <strong>Поезда на маршруте:</strong>
+  <% if @route.trains.empty? %>
+  <p>Поездов нет</p>
+    <% else %>
+    <% @route.trains.each do |tr| %>
+  <li><%= tr.number %></li>
+  <%end%>
+ <% end %>
+</p>
 
 <%= link_to 'Edit', edit_route_path(@route) %> 
 <%= link_to 'Back', routes_path %>
