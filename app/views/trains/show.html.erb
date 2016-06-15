@@ -6,6 +6,15 @@
 </p>
 
 <p>
+  <strong>На станции:</strong>
+  <% if @train.current_station.present? %>
+    <%= @train.current_station.title %>
+  <% else %>
+    Не указано
+  <% end %>  
+</p>
+
+<p>
   <%= link_to "Добавить вагон", new_train_carriage_path(@train) %>
 </p>
 

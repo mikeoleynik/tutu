@@ -4,7 +4,7 @@
 </p>
 
 <p>
-  <strong>Станциии в маршруте:</strong>
+  <strong>Станции в маршруте:</strong>
   <% if @route.railway_stations.empty? %>
   <p>Станций нет</p>
     <% else %>
@@ -13,6 +13,7 @@
   <%end%>
  <% end %>
 </p>
+<!-- Сделать поезда на маршруте -->
 
 <%= link_to 'Edit', edit_route_path(@route) %> 
 <%= link_to 'Back', routes_path %>

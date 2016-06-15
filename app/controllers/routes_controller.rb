@@ -2,7 +2,7 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index
-    @route = Route.all # обращается к модели
+    @route = Route.all
   end
 
   def show
