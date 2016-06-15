@@ -21,8 +21,8 @@
 <% else %>
   <p> Поезд принадлежит маршруту:</p>
   <ul>
-    <% @train.route.each do |rou| %>
-      <li><%= rou.title %></li>
+    <% @train.route.each do |rt| %>
+      <li><%= rt.title %></li>
      <% end %>
   </ul>
 <% end %>
