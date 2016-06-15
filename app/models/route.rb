@@ -9,9 +9,9 @@ class Route < ActiveRecord::Base
   before_validation :set_name
 
   private
-  # undefined method `name=' for #<Route:0x007fa0c19000d8>
+  
   def set_name
-    self.name = "#{railway_stations.first.title} - #{railway_stations.last.title}"
+    self.title = "#{railway_stations.first.title} - #{railway_stations.last.title}"
   end
 
   def stations_count
