@@ -14,18 +14,13 @@
   <% end %>  
 </p>
 
-<!-- указать принадлежность к маршруту -->
 <p>
-<% if @train.route.empty? %>
-  <p>Поезд не принадлежит маршруту</p>
-<% else %>
-  <p> Поезд принадлежит маршруту:</p>
-  <ul>
-    <% @train.route.each do |rt| %>
-      <li><%= rt.title %></li>
-     <% end %>
-  </ul>
-<% end %>
+  <strong>Route:</strong>
+  <% if @train.route.present? %>
+    <%= @train.route.title %>
+  <% else %>
+    unknown
+  <% end %>
 </p>
 
 <p>
