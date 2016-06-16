@@ -1,5 +1,5 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Название:</strong>
   <%= @route.title %>
 </p>
 
@@ -25,5 +25,6 @@
  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_route_path(@route) %> 
-<%= link_to 'Back', routes_path %>
+<%= link_to 'Редактирование', edit_route_path(@route) %> /
+<%= link_to 'Назад', routes_path %> /
+<%= link_to 'Главная', welcome_index_path %>

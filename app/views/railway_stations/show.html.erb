@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Название:</strong>
   <%= @railway_station.title %>
 </p>
 
@@ -18,6 +18,6 @@
 <% end %>
 </p>
 
-<%= link_to 'Edit', edit_railway_station_path(@railway_station) %> |
-<%= link_to 'Back', railway_stations_path %> |
-<%= link_to 'Home', welcome_index_path %>
+<%= link_to 'Редактирование', edit_railway_station_path(@railway_station) %> /
+<%= link_to 'Назад', railway_stations_path %> /
+<%= link_to 'Главная', welcome_index_path %>

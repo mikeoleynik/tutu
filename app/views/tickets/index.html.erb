@@ -1,21 +1,21 @@
-<h1>Listing Ticket</h1>
+<h1>Список билетов</h1>
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Названиеы</th>
   </tr>
  
   <% @ticket.each do |ticket| %>
     <tr>
       <td><%= ticket.number %></td>
-      <td><%= link_to 'Show', ticket_path(ticket) %></td>
-      <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-      <td><%= link_to 'Destroy', ticket_path(ticket),
+      <td><%= link_to 'Показать', ticket_path(ticket) %></td>
+      <td><%= link_to 'Редактировать', edit_ticket_path(ticket) %></td>
+      <td><%= link_to 'Удалить', ticket_path(ticket),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Вы уверены?' } %></td>
     </tr>
   <% end %>
 </table>
 
-<%= link_to 'New ticket', new_ticket_path %> |
-<%= link_to 'Home', welcome_index_path %>
+<%= link_to 'Создать', new_ticket_path %> /
+<%= link_to 'Главная', welcome_index_path %>

@@ -1,21 +1,21 @@
-<h1>Listing Route</h1>
+<h1>Список маршрутов</h1>
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Название</th>
   </tr>
  
   <% @route.each do |route| %>
     <tr>
       <td><%= route.title %></td>
-      <td><%= link_to 'Show', route_path(route) %></td>
-      <td><%= link_to 'Edit', edit_route_path(route) %></td>
-      <td><%= link_to 'Destroy', route_path(route),
+      <td><%= link_to 'Показать', route_path(route) %></td>
+      <td><%= link_to 'Редактировать', edit_route_path(route) %></td>
+      <td><%= link_to 'Удалить', route_path(route),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Вы уверены?' } %></td>
     </tr>
   <% end %>
 </table>
 
-<%= link_to 'New route', new_route_path %> |
-<%= link_to 'Home', welcome_index_path %>
+<%= link_to 'Создать', new_route_path %> /
+<%= link_to 'Главная', welcome_index_path %>

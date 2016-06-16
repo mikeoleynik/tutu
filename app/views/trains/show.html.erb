@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Номер:</strong>
   <%= @train.number %>
 </p>
 
@@ -15,11 +15,11 @@
 </p>
 
 <p>
-  <strong>Route:</strong>
+  <strong>Маршрут:</strong>
   <% if @train.route.present? %>
     <%= @train.route.title %>
   <% else %>
-    unknown
+    Не указан
   <% end %>
 </p>
 
@@ -31,18 +31,18 @@
   <strong>Вагоны</strong>
 
   <ul>
-  <% if @train.is_head? %>
-    <% @train.carriages.order(:number).each do |car| %>      
-      <li><%= link_to "Вагон №#{car.number}", car %></li>
+    <% if @train.is_head? %>
+      <% @train.carriages.order(:number).each do |car| %>      
+        <li><%= link_to "Вагон №#{car.number}", car %></li>
+      <% end %>
+    <% else %>
+      <% @train.carriages.order(number: :desc).each do |car| %>
+        <li><%= link_to "Вагон №#{car.number}", car %></li>
+      <% end %>
     <% end %>
-  <% else %>
-    <% @train.carriages.order(number: :desc).each do |car| %>
-      <li><%= link_to "Вагон №#{car.number}", car %></li>
-    <% end %>
-  <% end %>
   </ul>
 </p>
 
-<%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %> |
-<%= link_to 'Home', welcome_index_path %>
+<%= link_to 'Редактировать', edit_train_path(@train) %> /
+<%= link_to 'Назад', trains_path %> /
+<%= link_to 'Главная', welcome_index_path %>
