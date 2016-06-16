@@ -11,12 +11,7 @@
     <%= f.label :railway_station_ids, "Станции" %>
     <%= f.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
   </div>
-
-    <div class="field">
-    <%= f.label :train_ids, "Поезд" %>
-    <%= f.collection_select :train_ids, Train.all, :id, :number %>
-  </div>
-   
+ 
   <div class="field">
     <%= f.submit %>
   </div>
