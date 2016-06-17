@@ -1,6 +1,8 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Номер:</strong>
   <%= @ticket.number %>
 </p>
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> 
-<%= link_to 'Back', tickets_path %>
+
+<%= link_to 'Редактировать', edit_ticket_path(@ticket) %> /
+<%= link_to 'Назад', tickets_path %> /
+<%= link_to 'Главная', welcome_index_path %>

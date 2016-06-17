@@ -1,18 +1,18 @@
 <%= form_for(@route) do |f| %>
 
-<%= render 'common/errors', resource: @route %>
-
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <%= render 'common/errors', resource: @route %>
 
   <div class="field">
-  	<%= f.label :train, "Поезд" %>
-    <%= f.collection_select :train_ids, Train.all, :id, :number %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :railway_station_ids, "Станции" %>
+    <%= f.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
   </div>
  
-  <p>
+  <div class="field">
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>

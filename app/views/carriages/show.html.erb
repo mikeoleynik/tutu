@@ -14,8 +14,12 @@
 </p>
 
 <p>
+  Сидячих: <%= @carriage.sit_places %>
+</p>
+
+<p>
   Тип: <%= @carriage.type_car %>
 </p>
 
-<%= link_to 'Edit', edit_carriage_path(@carriage) %> 
-<%= link_to 'Back', carriage_path %>
+<%= link_to 'Назад', trains_path %> /
+<%= link_to 'Главная', welcome_index_path %>

@@ -1,6 +1,8 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Имя:</strong>
   <%= @user.title %>
 </p>
-<%= link_to 'Edit', edit_user_path(@user) %> 
-<%= link_to 'Back', users_path %>
+
+<%= link_to 'Редактировать', edit_user_path(@user) %> /
+<%= link_to 'Назад', users_path %> /
+<%= link_to 'Главная', welcome_index_path %>

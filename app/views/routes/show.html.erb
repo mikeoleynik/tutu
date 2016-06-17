@@ -1,18 +1,30 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Название:</strong>
   <%= @route.title %>
+</p>
+
+<p>
+  <strong>Станции в маршруте:</strong>
+  <% if @route.railway_stations.empty? %>
+  <p>Станций нет</p>
+    <% else %>
+    <% @route.railway_stations.each do |st| %>
+  <li><%= st.title %></li>
+  <%end%>
+ <% end %>
 </p>
 
 <p>
   <strong>Поезда на маршруте:</strong>
   <% if @route.trains.empty? %>
   <p>Поездов нет</p>
-  	<% else %>
-  	<% @route.trains.each do |train| %>
-  <li><%= train.number %></li>
- 	<%end%>
+    <% else %>
+    <% @route.trains.each do |tr| %>
+  <li><%= tr.number %></li>
+  <%end%>
  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_route_path(@route) %> 
-<%= link_to 'Back', routes_path %>
+<%= link_to 'Редактирование', edit_route_path(@route) %> /
+<%= link_to 'Назад', routes_path %> /
+<%= link_to 'Главная', welcome_index_path %>

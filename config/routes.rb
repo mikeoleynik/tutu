@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :trains do
     resources :carriages, shallow: true
   end
+  
   get 'welcome/index'
   
   # The priority is based upon order of creation: first created -> highest priority.

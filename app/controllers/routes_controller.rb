@@ -2,7 +2,7 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index
-    @route = Route.all # обращается к модели
+    @route = Route.all
   end
 
   def show
@@ -39,11 +39,11 @@ class RoutesController < ApplicationController
   end
 
   private
-  def set_route
-    @route = Route.find(params[:id])
-  end
+    def set_route
+      @route = Route.find(params[:id])
+    end
 
-  def route_params
-    params.require(:route).permit(:title, :train_ids)
-  end
+    def route_params
+      params.require(:route).permit(:title, :route_id, railway_station_ids: [], train_ids: [])
+    end
 end
