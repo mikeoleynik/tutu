@@ -18,6 +18,32 @@
   <% end %>
 </p>
 
+<p>
+  <h2>Список поездов</h2>
+  <table>
+  <thead>
+    <tr>
+      <td>Номер</td>
+      <td>Начальная станция</td>
+      <td>Время отправления</td>
+      <td>Конечная станция</td>
+      <td>Время прибытия</td>
+      <td></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= link_to 'Купить', new_ticket_path</td>
+    </tr>
+  </tbody>
+</p>
+
 <%= link_to 'Станции', railway_stations_path %> /
 <%= link_to 'Поезда', trains_path %> /
 <%= link_to 'Маршруты', routes_path %> /
