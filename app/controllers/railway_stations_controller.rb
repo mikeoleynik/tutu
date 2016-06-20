@@ -1,5 +1,5 @@
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: [:show, :edit, :update, :destroy, :update_position]
+  before_action :set_railway_station, only: [:show, :edit, :update, :destroy, :update_position, :update_arrive_time, :update_departure_time]
 
   def index
     @railway_stations = RailwayStation.all
@@ -47,6 +47,18 @@ class RailwayStationsController < ApplicationController
   def update_position
     @route = Route.find(params[:route_id])
     @railway_station.update_position(@route, params[:position])
+    redirect_to @route
+  end
+
+  def update_arrive_time
+    @route = Route.find(params[:route_id])
+    @railway_station.update_arrive(@route, params[:arrive_time])
+    redirect_to @route
+  end
+
+  def update_departure_time
+    @route = Route.find(params[:route_id])
+    @railway_station.update_departure(@route, params[:departure_time])
     redirect_to @route
   end
 
