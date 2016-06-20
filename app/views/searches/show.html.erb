@@ -1,7 +1,25 @@
 <h1>Поиск билета</h1>
 
+<p>
+  <%= form_for search_path, method: :post do %>
+    <div class="field">
+      <p> 
+        <%= label_tag "Начальная станция:" %>
+        <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title) %>
+      </p>
+
+      <p>
+        <%= label_tag "Конечная станция:" %>
+        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title) %>
+      </p>
+    </div>
+
+    <%= submit_tag 'Поиск' %>
+  <% end %>
+</p>
+
 <%= link_to 'Станции', railway_stations_path %> /
 <%= link_to 'Поезда', trains_path %> /
 <%= link_to 'Маршруты', routes_path %> /
 <%= link_to 'Билеты', tickets_path %> /
-<%= link_to 'Пользователи', users_path %> /
+<%= link_to 'Пользователи', users_path %> 

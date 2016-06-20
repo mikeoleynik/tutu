@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :carriages, shallow: true
   end
 
-  resource :search, only: [:new, :show, :edit]
+  resource :search, only: [:new, :show, :create]
   
   get 'welcome/index'
   
