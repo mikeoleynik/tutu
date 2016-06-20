@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :trains do
     resources :carriages, shallow: true
   end
+
+  resource :search, only: [:new, :show, :edit]
   
   get 'welcome/index'
   
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'searches#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
