@@ -39,7 +39,7 @@
             <td> <%= train.route.title %> </td>
             <td> <%= train.route.railway_stations.first.departure(train.route) %> </td>
             <td> <%= train.route.railway_stations.last.arrive(train.route) %> </td>
-            <td> <%= link_to 'Купить', new_user_ticket_path(@user) %></td>
+            <td> <%= link_to 'Купить', new_ticket_path %></td>
           </tr>
         <% end %>
       </tbody>

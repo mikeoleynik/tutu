@@ -1,3 +1,5 @@
+<h2> Мой Билет </h2>
+
 <p>
   <table>
   	<thead>
@@ -15,8 +17,8 @@
         <td><%= @ticket.number %></td>
         <td><%= @ticket.fio %></td>
         <td><%= @ticket.passport %></td>
-        <td><%= @ticket.primary_station_id %></td>
-        <td><%= @ticket.terminal_station_id %></td>
+        <td><%= @ticket.primary_station.title %></td>
+        <td><%= @ticket.terminal_station.title %></td>
       </tr>
     </tbody>
   </table>
