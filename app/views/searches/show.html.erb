@@ -19,29 +19,33 @@
 </p>
 
 <p>
-  <h2>Список поездов</h2>
-  <table>
-  <thead>
-    <tr>
-      <td>Номер</td>
-      <td>Начальная станция</td>
-      <td>Время отправления</td>
-      <td>Конечная станция</td>
-      <td>Время прибытия</td>
-      <td></td>
-    </tr>
-  </thead>
+  <% if @trains.present? %>
+    <h2>Список поездов</h2>
+    <table>
+    <thead>
+      <tr>
+        <td>Номер</td>
+        <td>Маршрут</td>
+        <td>Время отправления</td>
+        <td>Время прибытия</td>
+        <td></td>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><%= link_to 'Купить', new_ticket_path</td>
-    </tr>
-  </tbody>
+    <tbody>
+      <% @trains.each do |train| %>
+        <tr>
+          <td> <%= train.number %> </td>
+          <td> <%= train.route.title %> </td>
+          <td> <%= train.route.railsway_stations.first.departure(train.route) %> </td>
+          <td> <%= train.route.railsway_stations.last.arrive(train.route) %> </td>
+          <td> <%= link_to 'Купить', new_ticket_path %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    По данному направлению билетов не найдено!
+  <% end %>
 </p>
 
 <%= link_to 'Станции', railway_stations_path %> /
