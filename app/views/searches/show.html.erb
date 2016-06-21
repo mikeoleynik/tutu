@@ -5,12 +5,12 @@
     <div class="field">
       <p> 
         <%= label_tag "Начальная станция:" %>
-        <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title) %>
+        <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:primary_station_id]) %>
       </p>
 
       <p>
         <%= label_tag "Конечная станция:" %>
-        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title) %>
+        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:station_last]) %>
       </p>
     </div>
 
@@ -22,30 +22,31 @@
   <% if @trains.present? %>
     <h2>Список поездов</h2>
     <table>
-    <thead>
-      <tr>
-        <td>Номер</td>
-        <td>Маршрут</td>
-        <td>Время отправления</td>
-        <td>Время прибытия</td>
-        <td></td>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @trains.each do |train| %>
+      <thead>
         <tr>
-          <td> <%= train.number %> </td>
-          <td> <%= train.route.title %> </td>
-          <td> <%= train.route.railsway_stations.first.departure(train.route) %> </td>
-          <td> <%= train.route.railsway_stations.last.arrive(train.route) %> </td>
-          <td> <%= link_to 'Купить', new_ticket_path %></td>
+          <td>Номер</td>
+          <td>Маршрут</td>
+          <td>Время отправления</td>
+          <td>Время прибытия</td>
+          <td></td>
         </tr>
-      <% end %>
-    </tbody>
+      </thead>
+
+      <tbody>
+        <% @trains.each do |train| %>
+          <tr>
+            <td> <%= train.number %> </td>
+            <td> <%= train.route.title %> </td>
+            <td> <%= train.route.railway_stations.first.departure(train.route) %> </td>
+            <td> <%= train.route.railway_stations.last.arrive(train.route) %> </td>
+            <td> <%= link_to 'Купить', new_ticket_path %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   <% else %>
     По данному направлению билетов не найдено!
-  <% end %>
+  <% end %>  
 </p>
 
 <%= link_to 'Станции', railway_stations_path %> /
