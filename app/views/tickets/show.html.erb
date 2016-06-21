@@ -1,6 +1,25 @@
 <p>
-  <strong>Номер:</strong>
-  <%= @ticket.number %>
+  <table>
+  	<thead>
+      <tr>
+        <td>Номер</td>
+        <td>ФИО</td>
+        <td>Паспорт</td>
+        <td>Начальная станция</td>
+        <td>Конечная станция</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @ticket.number %></td>
+        <td><%= @ticket.fio %></td>
+        <td><%= @ticket.passport %></td>
+        <td><%= @ticket.primary_station_id %></td>
+        <td><%= @ticket.terminal_station_id %></td>
+      </tr>
+    </tbody>
+  </table>
 </p>
 
 <%= link_to 'Редактировать', edit_ticket_path(@ticket) %> /

@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :routes
-  resources :users
   resources :tickets
+  resources :users do
+    resources :tickets, shallow: true
+  end
 
   resources :trains do
     resources :carriages, shallow: true

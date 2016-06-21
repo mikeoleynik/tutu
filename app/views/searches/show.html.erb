@@ -10,7 +10,7 @@
 
       <p>
         <%= label_tag "Конечная станция:" %>
-        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:station_last]) %>
+        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:terminal_station_id]) %>
       </p>
     </div>
 
@@ -39,7 +39,7 @@
             <td> <%= train.route.title %> </td>
             <td> <%= train.route.railway_stations.first.departure(train.route) %> </td>
             <td> <%= train.route.railway_stations.last.arrive(train.route) %> </td>
-            <td> <%= link_to 'Купить', new_ticket_path %></td>
+            <td> <%= link_to 'Купить', new_user_ticket_path(@user) %></td>
           </tr>
         <% end %>
       </tbody>
