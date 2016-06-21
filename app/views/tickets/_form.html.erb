@@ -16,16 +16,6 @@
     <%= f.label :passport, 'Паспорт' %><br>
     <%= f.text_field :passport %>
   </p>
-   
-  <p>
-    <%= f.label :primary_station_id, 'Начальная станция' %><br>
-    <%= f.collection_select :primary_station_id, RailwayStation.all, :id, :title %>
-  </p>
-  
-  <p>
-    <%= f.label :terminal_station_id, 'Конечная станцияя' %><br>
-    <%= f.collection_select :terminal_station_id, RailwayStation.all, :id, :title %> 
-  </p>
 
   <p>
     <%= f.submit %>
