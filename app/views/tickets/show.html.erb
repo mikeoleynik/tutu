@@ -1,5 +1,5 @@
 <h2> Мой Билет </h2>
-
+<%= @ticket.user.email %>
 <p>
   <table>
   	<thead>
@@ -20,6 +20,6 @@
   </table>
 </p>
 
-<%= link_to 'Редактировать', edit_ticket_path(@ticket) %> /
+<%= link_to 'Редактировать', edit_admin_ticket_path(@ticket) %> /
 <%= link_to 'Назад', tickets_path %> /
 <%= link_to 'Главная', welcome_index_path %>
