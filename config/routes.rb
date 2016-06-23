@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 devise_for :users
 
-resources :tickets, only: [:create, :show, :new]
+resources :tickets
 resource :search, only: [:new, :show, :create]
   
 namespace :admin do

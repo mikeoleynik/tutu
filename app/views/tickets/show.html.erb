@@ -1,5 +1,7 @@
 <h2> Мой Билет </h2>
 <%= @ticket.user.email %>
+
+<p> Мои билеты: <%= link_to 'Мои Билеты', tickets_path, method: :get %> </p>
 <p>
   <table>
   	<thead>
