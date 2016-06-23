@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
 
-  resources :railway_stations
+  resources :railway_stations do
+    patch :update_position, on: :member
+    patch :update_arrive_time, on: :member
+    patch :update_departure_time, on: :member
+  end
+
   resources :routes
-  resources :users
   resources :tickets
+  resources :users do
+    resources :tickets, shallow: true
+  end
 
   resources :trains do
     resources :carriages, shallow: true
   end
+
+  resource :search, only: [:new, :show, :create]
   
   get 'welcome/index'
   
@@ -15,7 +24,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'searches#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
