@@ -1,0 +1,28 @@
+ru:
+  common:
+    back: 'Назад'
+    errors: 'При заполнении формы возникли ошибки'
+  admin:
+    railway_stations:
+      new:
+        title: 'Новая станция'
+      form:
+        submit: '%{action} станцию'
+    trains:
+      new:
+        title: 'Новый поезд'
+      form:
+        submit: '%{action} поезд'
+    routes:
+      new:
+        title: 'Новый маршрут'
+      form:
+        submit: '%{action} маршрут'
+    carriages:
+      show:
+        up_places: 'Верхних мест'
+        lower_places: 'Нижних мест'
+        type_car: 'Тип'
+        side_up_places: 'Боковых верхних мест'
+        side_lower_places: 'Боковых нижних мест'
+        sit_places: 'Сидячих мест'

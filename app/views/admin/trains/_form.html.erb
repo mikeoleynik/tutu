@@ -8,22 +8,22 @@
   </div>
    
   <div class="field">
-    <%= f.label :current_station, "Текущая станция" %>  
+    <%= f.label :current_station %>  
     <%= f.collection_select :current_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= f.label :route, "Routes" %>
+    <%= f.label :route %>
     <%= f.collection_select :route_id, Route.all, :id, :title %>
   </div>
   
   <div class="field">
-    <%= f.label :is_head, "C головы" %>
+    <%= f.label :is_head %>
     <%= f.check_box :is_head %>
   </div> 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit', action: @train.new_record? ? 'Создать' : 'Изменить')%>
   </div>
 
 <% end %>
