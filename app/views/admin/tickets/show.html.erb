@@ -1,0 +1,27 @@
+<h2> Мой Билет </h2>
+<%= @ticket.user.email %>
+
+<p> <%= link_to 'Мои Билеты', admin_tickets_path, method: :get %> </p>
+<p>
+  <table>
+  	<thead>
+      <tr>
+        <td>Номер</td>
+        <td>ФИО</td>
+        <td>Паспорт</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @ticket.number %></td>
+        <td><%= @ticket.fio %></td>
+        <td><%= @ticket.passport %></td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
+<%= link_to 'Редактировать', edit_admin_ticket_path(@ticket) %> /
+<%= link_to 'Назад', tickets_path %> /
+<%= link_to 'Главная', welcome_index_path %>

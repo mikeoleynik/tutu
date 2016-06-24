@@ -1,0 +1,17 @@
+<%= form_for [:admin, @train, @carriage] do |f| %>
+
+  <div class="field">
+    <%= f.label :sit_places %><br>
+    <%= f.number_field :sit_places %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_car %><br>
+    <%= f.text_field :type_car %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Создать" %>
+  </div>
+  
+<% end %>

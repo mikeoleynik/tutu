@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+devise_for :users
+
+resources :tickets
+resource :search, only: [:new, :show, :create]
+  
+namespace :admin do
   resources :railway_stations do
     patch :update_position, on: :member
     patch :update_arrive_time, on: :member
@@ -7,17 +13,16 @@ Rails.application.routes.draw do
   end
 
   resources :routes
+  
   resources :tickets
-  resources :users do
-    resources :tickets, shallow: true
-  end
 
   resources :trains do
     resources :carriages, shallow: true
   end
 
-  resource :search, only: [:new, :show, :create]
-  
+  get 'welcome/index'
+end
+
   get 'welcome/index'
   
   # The priority is based upon order of creation: first created -> highest priority.

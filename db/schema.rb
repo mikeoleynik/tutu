@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621073056) do
+ActiveRecord::Schema.define(version: 20160623134301) do
 
   create_table "carriages", force: :cascade do |t|
     t.string   "type"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20160621073056) do
     t.string   "passport"
   end
 
+  add_index "tickets", ["user_id"], name: "index_tickets_on_user_id"
+
   create_table "trains", force: :cascade do |t|
     t.integer  "number"
     t.integer  "route_id"
@@ -73,8 +75,23 @@ ActiveRecord::Schema.define(version: 20160621073056) do
 
   create_table "users", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.boolean  "admin",                  default: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

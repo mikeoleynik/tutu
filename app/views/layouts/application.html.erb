@@ -6,7 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    <p>Здравствуй, <%= current_user.first_name %> </p>
+  <% else %>
+    <%= link_to 'Войти', new_user_session_path %>
+  <% end %>
 
   <%= yield %>
 
