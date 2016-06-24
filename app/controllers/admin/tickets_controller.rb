@@ -1,16 +1,15 @@
-class TicketsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::TicketsController < Admin::BaseController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tickets = current_user.tickets
+    @tickets = Ticket.all
   end
 
   def show
   end
 
   def new
-    @ticket = Ticket.new
+    @ticket = current_user.tickets.new
   end
 
   def edit
@@ -20,7 +19,7 @@ class TicketsController < ApplicationController
     @ticket = current_user.tickets.new(ticket_params)
 
     if @ticket.save
-      redirect_to @ticket, notice: "Билет #{@ticket.number} куплен"
+      redirect_to [:admin, @ticket], notice: "Билет #{@ticket.number} куплен"
     else
       render 'new'
     end
@@ -28,7 +27,7 @@ class TicketsController < ApplicationController
 
   def update
     if @ticket.update(ticket_params)
-      redirect_to @ticket
+      redirect_to [:admin, @ticket]
     else
       render 'edit'
     end
@@ -36,7 +35,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to tickets_path
+    redirect_to admin_tickets_path
   end
 
   private
