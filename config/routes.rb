@@ -19,6 +19,8 @@ namespace :admin do
   resources :trains do
     resources :carriages, shallow: true
   end
+
+  get 'welcome/index'
 end
 
   get 'welcome/index'

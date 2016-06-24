@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_in_path_for(current_user)
+    current_user.admin? ? admin_welcome_index_path : root_path
+  end
+
+  # def after_sign_out_path_for(resource)
+  #   # return the path based on resource
+  # end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
