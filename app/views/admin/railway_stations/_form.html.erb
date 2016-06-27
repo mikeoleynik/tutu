@@ -3,12 +3,11 @@
   <%= render 'common/errors', resource: @railway_station %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Название станции"  %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('.submit', action: @railway_station.new_record? ? 'Создать' : 'Изменить')%>
+    <%= f.submit t('.submit', action: @railway_station.new_record? ? 'Создать' : 'Изменить'), class: "btn btn-default"%>
   </div>
   
 <% end %>

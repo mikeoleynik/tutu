@@ -2,23 +2,20 @@
  
   <%= render 'common/errors', resource: @ticket %>
    
-  <p>
-    <%= f.label :number %><br>
-    <%= f.text_field :number %>
+ <p>
+    <%= f.text_field :number, class: "form-control", placeholder: "Номер" %>
   </p>
 
   <p>
-    <%= f.label :fio %><br>
-    <%= f.text_field :fio %>
+    <%= f.text_field :fio, class: "form-control", placeholder: "ФИО" %>
   </p>
 
   <p>
-    <%= f.label :passport %><br>
-    <%= f.text_field :passport %>
+    <%= f.text_field :passport, class: "form-control", placeholder: "Данные паспорта" %>
   </p>
 
   <p>
-    <%= f.submit t('.submit', action: @ticket.new_record? ? 'Создать' : 'Изменить')%>
+    <%= f.submit t('.submit', action: @ticket.new_record? ? 'Создать' : 'Изменить'), class: "btn btn-default"%>
   </p>
  
 <% end %>

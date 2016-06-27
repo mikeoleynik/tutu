@@ -1,27 +1,60 @@
-<h1>Поиск билета</h1>
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+      <div class="carousel-inner full">
 
-<p>
-  <%= form_for search_path, method: :post do %>
-    <div class="field">
-      <p> 
-        <%= label_tag "Начальная станция:" %>
-        <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:primary_station_id]) %>
-      </p>
+        <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  
+          <!-- Слайд №1 -->
+          <div class="active item green">
+            <%= image_tag "travel" %>
+              <h3>Заголовок 1 слайда</h3>
+              <p>Текст (описание) 1 слайда...</p>
+          </div>
+          <!-- Слайд №2 -->
+          <div class="item red">
+            <%= image_tag "dream" %>
+            <h3>Second slide label</h3>
+              <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+          </div>
+          <!-- Слайд №3 -->
+          <div class="item blue">
+            <%= image_tag "relax" %>
+              <h3>Third slide label</h3>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
 
-      <p>
-        <%= label_tag "Конечная станция:" %>
-        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:terminal_station_id]) %>
-      </p>
+      </div>
     </div>
 
-    <%= submit_tag 'Поиск' %>
+
+    <h1>Поиск билета</h1>
+<div class="row">
+  <%= form_for search_path, method: :post do %>
+
+    <div class="col-md-4">
+      <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:primary_station_id]), class: "form-control" %>
+    </div>
+
+    <div class="col-md-4">
+      <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:terminal_station_id]), class: "form-control" %>
+    </div>
+
+    <div class="col-md-4"> 
+      <%= submit_tag 'Поиск', class: "btn btn-primary" %>
+    </div>
+
   <% end %>
-</p>
+</div>
+
 
 <p>
   <% if @trains.present? %>
     <h2>Список поездов</h2>
-    <table>
+    <table class="table table-striped table-hover ">
       <thead>
         <tr>
           <td>Номер</td>

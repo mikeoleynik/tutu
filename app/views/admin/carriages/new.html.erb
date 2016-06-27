@@ -1,24 +1,30 @@
-<h1> <%= t('.title') %> </h1>
+<div class="row">
+  <div class="col-md-3">
+    
+    <h1> <%= t('.title') %> </h1>
 
-<% if params[:type_car] == 'ComfortCarriage' %>
-  <%= render 'comfort_carriage' %>
-<% end %>
-<p><%= link_to 'Купе', new_admin_train_carriage_path(type_car: 'ComfortCarriage') %></p>
+    <% if params[:type_car] == 'ComfortCarriage' %>
+      <%= render 'comfort_carriage' %>
+    <% end %>
+    <p><%= link_to 'Купе', new_admin_train_carriage_path(type_car: 'ComfortCarriage') %></p>
 
-<% if params[:type_car] == 'EconomyCarriage' %>
-  <%= render 'economy_carriage' %>
-<% end %>
-<p><%= link_to 'Плацкарт', new_admin_train_carriage_path(type_car: 'EconomyCarriage') %></p>
+    <% if params[:type_car] == 'EconomyCarriage' %>
+      <%= render 'economy_carriage' %>
+    <% end %>
+    <p><%= link_to 'Плацкарт', new_admin_train_carriage_path(type_car: 'EconomyCarriage') %></p>
 
-<% if params[:type_car] == 'SvCarriage' %>
-  <%= render 'sv_carriage' %>
-<% end %>
-<p><%= link_to 'СВ', new_admin_train_carriage_path(type_car: 'SvCarriage') %></p>
+    <% if params[:type_car] == 'SvCarriage' %>
+      <%= render 'sv_carriage' %>
+    <% end %>
+    <p><%= link_to 'СВ', new_admin_train_carriage_path(type_car: 'SvCarriage') %></p>
 
-<% if params[:type_car] == 'SitCarriage' %>
-  <%= render 'sit_carriage' %>
-<% end %>
-<p><%= link_to 'Сидячий', new_admin_train_carriage_path(type_car: 'SitCarriage') %></p>
+    <% if params[:type_car] == 'SitCarriage' %>
+      <%= render 'sit_carriage' %>
+    <% end %>
+    <p><%= link_to 'Сидячий', new_admin_train_carriage_path(type_car: 'SitCarriage') %></p>
 
-<%= link_to 'Назад', admin_trains_path %> |
-<%= link_to 'Главная', welcome_index_path %>
+    <%= link_to 'Назад', admin_trains_path %> |
+    <%= link_to 'Главная', welcome_index_path %>
+
+  </div>
+</div>
