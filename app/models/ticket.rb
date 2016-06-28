@@ -7,9 +7,14 @@ class Ticket < ActiveRecord::Base
   validates :number, presence: true
 
   after_create :send_notification
+  after_destroy :send_delete_notification
 
   private
   def send_notification
     TicketsMailer.buy_ticket(self.user, self).deliver_now
+  end
+
+  def send_delete_notification
+    TicketsMailer.delete_ticket(self.user, self).deliver_now
   end
 end
