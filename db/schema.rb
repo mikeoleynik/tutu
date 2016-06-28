@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628103706) do
+ActiveRecord::Schema.define(version: 20160628112430) do
 
   create_table "carriages", force: :cascade do |t|
     t.string   "type"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160628103706) do
 
   add_index "tickets", ["primary_station_id"], name: "index_tickets_on_primary_station_id"
   add_index "tickets", ["terminal_station_id"], name: "index_tickets_on_terminal_station_id"
+  add_index "tickets", ["train_id"], name: "index_tickets_on_train_id"
   add_index "tickets", ["user_id"], name: "index_tickets_on_user_id"
 
   create_table "trains", force: :cascade do |t|
