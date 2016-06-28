@@ -1,21 +1,19 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Название:</strong>
   <%= @railway_station.title %>
 </p>
 
 <p>
-<% if @railway_station.routes.empty? %>
-  <p>Станция не входит ни в один маршрут</p>
-<% else %>
-  <p> Станция входит в следующие маршруты:</p>
-  <ul>
-    <% @railway_station.routes.each do |route| %>
-      <li><%= route.title %></li>
-     <% end %>
-  </ul>
-<% end %>
+	<% if @railway_station.routes.empty? %>
+	  <p>Станция не входит ни в один маршрут</p>
+	<% else %>
+	  <p> Станция входит в следующие маршруты:</p>
+	  <ul>
+	    <% @railway_station.routes.each do |route| %>
+	      <li><%= route.title %></li>
+	     <% end %>
+	  </ul>
+	<% end %>
 </p>
 
 <%= link_to 'Редактирование', edit_admin_railway_station_path(@railway_station) %> /

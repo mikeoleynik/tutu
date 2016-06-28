@@ -1,0 +1,32 @@
+ru:
+  activerecord:
+    models:
+      railway_station: 'Станция'
+      train: 'Поезд'
+      route: 'Маршрут'
+      carriage: 'Вагон'
+    attributes:
+      railway_station:
+        title: 'Название'
+      train:
+        number: 'Номер'
+        current_station: 'Текущая станция' 
+        route: 'Маршруты'
+        is_head: 'С головы'
+      route:
+        title: 'Название'
+        railway_station_ids: 'Cтанции'
+      carriage:
+        up_places: 'Верхние места'
+        lower_places: 'Нижние места'
+        type_car: 'Тип'
+        side_up_places: 'Боковые верхние места'
+        side_lower_places: 'Боковые нижние места'
+        sit_places: 'Сидячие места'
+      ticket:
+        number: 'Номер билет'
+        fio: 'ФИО'
+        passport: 'Паспорт'
+    errors:
+      messages:
+        blank: 'не может быть пустым'

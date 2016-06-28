@@ -1,0 +1,75 @@
+ru:
+  common:
+    back: 'Назад'
+    errors: 'При заполнении формы возникли ошибки'
+  tickets:
+    new:
+      title: 'Новый билет'
+    form:
+      submit: '%{action} билет'
+  devise:
+    shared:
+      links:
+        log_in: 'Войти'
+        forgot: 'Забыли пароль?'
+        instructions: 'Не получили инструкции?'
+        unlock: 'Не получили инструкции по разблокировке?'
+        sign_up: 'Зарегистрируйтесь'
+    sessions:
+      new:
+        title: 'Войти'
+        submit: 'Войти'
+    registrations:
+      new:
+        title: 'Регистрация'
+    confirmations:
+      new:
+        title: 'Подтверждение учетной записи'
+    passwords:
+      new:
+        title: 'Забыли пароль?'
+  admin:
+    railway_stations:
+      new:
+        title: 'Новая станция'
+      form:
+        submit: '%{action} станцию'
+    trains:
+      new:
+        title: 'Новый поезд'
+      form:
+        submit: '%{action} поезд'
+    routes:
+      new:
+        title: 'Новый маршрут'
+      edit: 
+        title: 'Редактирование маршрута'
+      form:
+        submit: '%{action} маршрут'
+    carriages:
+      new:
+        title: 'Новый вагон'
+      show:
+        up_places: 'Верхних мест'
+        lower_places: 'Нижних мест'
+        type_car: 'Тип'
+        side_up_places: 'Боковых верхних мест'
+        side_lower_places: 'Боковых нижних мест'
+        sit_places: 'Сидячих мест'
+      economy_carriage:
+          submit: 'Создать' 
+      sv_carriage:
+        submit: 'Создать'
+      sit_carriage:
+          submit: 'Создать'
+      comfort_carriage:
+          submit: 'Создать'
+    tickets:
+      new:
+        title: 'Новый билет'
+      edit:
+        title: 'Редактирование билета'  
+      form:
+        submit: '%{action} билет'
+
+        

@@ -1,27 +1,27 @@
 <h1>Поиск билета</h1>
-
-<p>
+<div class="row">
   <%= form_for search_path, method: :post do %>
-    <div class="field">
-      <p> 
-        <%= label_tag "Начальная станция:" %>
-        <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:primary_station_id]) %>
-      </p>
 
-      <p>
-        <%= label_tag "Конечная станция:" %>
-        <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:terminal_station_id]) %>
-      </p>
+    <div class="col-md-4">
+      <%= select_tag :primary_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:primary_station_id]), class: "form-control" %>
     </div>
 
-    <%= submit_tag 'Поиск' %>
+    <div class="col-md-4">
+      <%= select_tag :terminal_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:terminal_station_id]), class: "form-control" %>
+    </div>
+
+    <div class="col-md-4"> 
+      <%= submit_tag 'Поиск', class: "btn btn-primary" %>
+    </div>
+
   <% end %>
-</p>
+</div>
+
 
 <p>
   <% if @trains.present? %>
     <h2>Список поездов</h2>
-    <table>
+    <table class="table table-striped table-hover ">
       <thead>
         <tr>
           <td>Номер</td>

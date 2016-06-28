@@ -1,0 +1,23 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container-footer {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container-footer .text-muted {
+  margin: 20px 0;
+}

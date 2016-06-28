@@ -6,20 +6,27 @@
 </p>
 
 <p>
-  Верхних сидений: <%= @carriage.up_places %>
+  <%= t('.up_places') %>: <%= @carriage.up_places %>
 </p>
 
 <p>
-  Нижних сидений: <%= @carriage.lower_places %>
+  <%= t('.lower_places') %>: <%= @carriage.lower_places %>
 </p>
 
 <p>
-  Сидячих: <%= @carriage.sit_places %>
+  <%= t('.sit_places') %>: <%= @carriage.sit_places %>
+</p>
+
+<p>
+  <%= t('.side_up_places') %>: <%= @carriage.side_up_places %>
+</p>
+
+<p>
+  <%= t('.side_lower_places') %>: <%= @carriage.side_lower_places %>
 </p>
 
 <p>
   Тип: <%= @carriage.type_car %>
 </p>
 
-<%= link_to 'Назад', trains_path %> /
-<%= link_to 'Главная', welcome_index_path %>
+<%= link_to 'Назад', admin_trains_path %>

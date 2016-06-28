@@ -1,17 +1,15 @@
 <%= form_for [:admin, @train, @carriage] do |f| %>
 
   <div class="field">
-    <%= f.label :sit_places %><br>
-    <%= f.number_field :sit_places %>
+    <%= f.number_field :sit_places, class: "form-control", placeholder: "Сидячие места" %>
   </div>
 
   <div class="field">
-    <%= f.label :type_car %><br>
-    <%= f.text_field :type_car %>
+    <%= f.text_field :type_car, class: "form-control", placeholder: "Тип вагона" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Создать" %>
+    <%= f.submit t('.submit'), class: "btn btn-default" %>
   </div>
   
 <% end %>

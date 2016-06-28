@@ -1,6 +1,12 @@
-<h1>Новый билет</h1>
+<h1><%= t('.title') %></h1>
 
-<%= render 'form' %>
+ <div class="row">
+  <div class="col-md-3">
 
-<%= link_to 'Назад', tickets_path %> /
-<%= link_to 'Главная', root_path %>
+    <%= render 'form' %>
+
+    <%= link_to 'Назад', tickets_path %> /
+    <%= link_to 'Главная', root_path %>
+
+  </div>
+</div>

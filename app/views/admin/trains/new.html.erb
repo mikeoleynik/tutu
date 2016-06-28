@@ -1,5 +1,11 @@
-<h1>Новый поезд</h1>
+<h1> <%= t('.title') %> </h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-3">
 
-<%= link_to 'Назад', admin_trains_path %>
+    <%= render 'form' %>
+
+    <%= link_to t('common.back'), admin_trains_path %>
+  
+  </div>
+</div>

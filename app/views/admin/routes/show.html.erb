@@ -9,7 +9,7 @@
   <% if @route.railway_stations.empty? %>
       Список пуст
   <% else %>
-    <table>
+    <table class="table table-striped table-hover ">
       <thead>
       <tr>
         <td width="100px">Название</td>
@@ -18,8 +18,9 @@
         <td>Отправление</td>
       </tr>
       </thead>
+
       <tbody>
-      <% @route.railway_stations.ordered.each do |st| %>
+        <% @route.railway_stations.ordered.each do |st| %>
           <tr>
             <td><%= st.title %></td>
 
@@ -48,21 +49,21 @@
             </td>
 
           </tr>
-      <% end %>
+        <% end %>
       </tbody>
     </table>
-<% end %>
+  <% end %>
 </p>
 
 <p>
   <strong>Поезда на маршруте:</strong>
   <% if @route.trains.empty? %>
-  <p>Поездов нет</p>
-    <% else %>
+    <p>Поездов нет</p>
+  <% else %>
     <% @route.trains.each do |tr| %>
-  <li><%= tr.number %></li>
-  <%end%>
- <% end %>
+      <li><%= tr.number %></li>
+    <%end%>
+  <% end %>
 </p>
 
 <%= link_to 'Редактирование', edit_admin_route_path(@route) %> /

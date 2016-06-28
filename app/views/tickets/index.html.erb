@@ -1,19 +1,23 @@
 <h1>Список билетов</h1>
 
-<table>
-  <tr>
-    <th>Название</th>
-  </tr>
- 
-  <% @tickets.each do |ticket| %>
+<table class="table table-striped table-hover ">
+  <thead>
     <tr>
-      <td><%= ticket.number %></td>
-      <td><%= link_to 'Показать', ticket_path(ticket) %></td>
-      <td><%= link_to 'Удалить', ticket_path(ticket),
+      <th>Номер</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.number %></td>
+        <td><%= link_to 'Показать', ticket_path(ticket) %></td>
+        <td><%= link_to 'Удалить', ticket_path(ticket),
               method: :delete,
               data: { confirm: 'Вы уверены?' } %></td>
-    </tr>
-  <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'Создать', new_ticket_path %> /
