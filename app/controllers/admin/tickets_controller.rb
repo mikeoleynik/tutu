@@ -8,21 +8,7 @@ class Admin::TicketsController < Admin::BaseController
   def show
   end
 
-  def new
-
-  end
-
   def edit
-  end
-
-  def create
-    @ticket = current_user.tickets.new(ticket_params)
-
-    if @ticket.save
-      redirect_to [:admin, @ticket], notice: "Билет #{@ticket.number} куплен"
-    else
-      render 'new'
-    end
   end
 
   def update
