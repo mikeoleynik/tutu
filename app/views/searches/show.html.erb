@@ -1,37 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-      <div class="carousel-inner full">
-
-        <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-  
-          <!-- Слайд №1 -->
-          <div class="active item green">
-            <%= image_tag "travel" %>
-              <h3>Заголовок 1 слайда</h3>
-              <p>Текст (описание) 1 слайда...</p>
-          </div>
-          <!-- Слайд №2 -->
-          <div class="item red">
-            <%= image_tag "dream" %>
-            <h3>Second slide label</h3>
-              <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-          </div>
-          <!-- Слайд №3 -->
-          <div class="item blue">
-            <%= image_tag "relax" %>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-
-      </div>
-    </div>
-
-
-    <h1>Поиск билета</h1>
+<h1>Поиск билета</h1>
 <div class="row">
   <%= form_for search_path, method: :post do %>
 

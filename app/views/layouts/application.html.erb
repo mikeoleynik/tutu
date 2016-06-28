@@ -52,11 +52,11 @@
               <li> <%= link_to 'Выйти', destroy_user_session_path, method: :delete %> </li>
               <% if current_user.admin?  %>
                 <li><%= link_to "Админка", admin_welcome_index_path %></li>
+                <li class="navbar-text"> Здравствуй, <%= current_user.first_name %> <%= current_user.last_name %></li>
               <% end %>
             <% else %>
               <li> <%= link_to 'Войти', new_user_session_path %> </li>
             <% end %>
-             <li> Здравствуй, <%= current_user.first_name %> <%= current_user.last_name %></li>
           </ul>
         </div>
       </div>

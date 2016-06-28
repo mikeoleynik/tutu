@@ -19,6 +19,15 @@ ru:
       new:
         title: 'Войти'
         submit: 'Войти'
+    registrations:
+      new:
+        title: 'Регистрация'
+    confirmations:
+      new:
+        title: 'Подтверждение учетной записи'
+    passwords:
+      new:
+        title: 'Забыли пароль?'
   admin:
     railway_stations:
       new:

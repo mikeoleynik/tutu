@@ -1,4 +1,27 @@
-<h2><%= link_to 'Станции', admin_railway_stations_path %></h2>
-<h2><%= link_to 'Поезда', admin_trains_path %></h2>
-<h2><%= link_to 'Маршруты', admin_routes_path %></h2>
-<h2><%= link_to 'Поиск', root_path %></h2>
+<div class="row">
+
+  <div class="col-md-3">
+	<%= image_tag "station" %><br>
+  	<h2><%= link_to 'Станции', admin_railway_stations_path %></h2>
+  </div>
+
+  <div class="col-md-3">
+  	<%= image_tag "train" %><br>
+<h2> <%= link_to 'Поезда', admin_trains_path %></h2>
+  </div>
+
+  <div class="col-md-3">
+  	<%= image_tag "route" %><br>
+  	<h2><%= link_to 'Маршруты', admin_routes_path %></h2>
+  </div>
+
+  <div class="col-md-3">
+  	<%= image_tag "search" %><br>
+  	<h2><%= link_to 'Поиск билета', root_path %></h2>
+  </div>
+</div>
+
+
+
+
+

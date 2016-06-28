@@ -1,7 +1,5 @@
 <h2> Мой Билет </h2>
-<%= @ticket.user.email %>
 
-<p> <%= link_to 'Мои Билеты', tickets_path, method: :get %> </p>
 <p>
   <table class="table table-striped table-hover ">
   	<thead>
@@ -21,6 +19,8 @@
     </tbody>
   </table>
 </p>
+
+<p> <%= link_to 'Мои Билеты', tickets_path, method: :get %> </p>
 
 <%= link_to 'Назад', tickets_path %> /
 <%= link_to 'Главная', root_path %>
