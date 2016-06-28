@@ -3,16 +3,18 @@
 
   <div class="col-md-3">
 
-		<h2> <%= t('.title') %> </h2>
+    <h2> <%= t('.title') %> </h2>
 
-	  <div class="field">
-	    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
-	  </div>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+    </div>
 
-	  <div class="actions">
-	    <%= f.submit "Отправить инструкции", class: "btn btn-default" %>
-	  </div>
-		<%= render "devise/shared/links" %>
+    <div class="actions">
+      <%= f.submit "Отправить инструкции", class: "btn btn-default" %>
+    </div>
+    
+    <%= render "devise/shared/links" %>
+  
   </div>
 <% end %>
 
