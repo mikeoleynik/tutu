@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('a.edit_route').click(function(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     var route_id = $(this).data('routeId');
     var form = $('#edit_route_' + route_id);

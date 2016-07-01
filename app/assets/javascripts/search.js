@@ -1,12 +1,12 @@
 $(document).ready(function() {
   $('.search_form').submit(function() {
-    var start_station;
-    var end_station;
+    var primary_station;
+    var terminal_station;
 
-    start_station = $(this).find('#start_station');
-    end_station = $(this).find('#end_station');
+    primary_station = $(this).find('#primary_station_id');
+    terminal_station = $(this).find('#terminal_station_id');
 
-    if ( start_station.val() === end_station.val() ) {
+    if ( primary_station.val() == terminal_station.val() ) {
       alert('Выберите конечную станцию');
       return false;
     }

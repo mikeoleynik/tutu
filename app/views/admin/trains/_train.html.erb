@@ -1,9 +1,9 @@
 <tr>
   <td>
     <div id="train_number_<%= train.id %>">
-      <%= train.number %>
-      <%= render 'form', train: train, hidden: true %>
+      <%= train.number %>  
     </div>
+    <%= render 'form', train: train, hidden: true %>
     </td>
   <td><%= link_to 'Показать', [:admin, train] %></td>
   <td><%= link_to 'Редактировать', '', class: 'edit_train', data: { train_id: train.id } %></td>
