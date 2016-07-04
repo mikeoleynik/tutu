@@ -1,6 +1,8 @@
-<%= form_for([:admin, @route]) do |f| %>
+<% hidden = false unless local_assigns[:hidden] %>
 
-  <%= render 'common/errors', resource: @route %>
+<%= form_for [:admin, route], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |f| %>
+
+  <%= render 'common/errors', resource: route %>
 
   <div class="field">
     <%= f.text_field :title, class: "form-control", placeholder: "Название маршрута" %>
@@ -12,6 +14,6 @@
   </div>
  
   <div class="field">
-    <%= f.submit t('.submit', action: @route.new_record? ? 'Создать' : 'Изменить'), class: "btn btn-default"%>
+    <%= f.submit t('.submit', action: route.new_record? ? 'Создать' : 'Изменить'), class: "btn btn-default"%>
   </div>
 <% end %>

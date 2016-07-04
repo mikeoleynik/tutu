@@ -3,11 +3,9 @@
 <div class="row">
   <div class="col-md-3">
 
-		<%= render 'form' %>
+		<%= render 'form', station: @railway_station %>
 
 		<%= link_to 'Показать', [:admin, @railway_station] %> /
-		<%= link_to 'Назад', admin_railway_stations_path %> /
-		<%= link_to 'Главная', welcome_index_path %>
-	
+		<%= link_to 'Назад', admin_railway_stations_path %>	
 	</div>
 </div>
