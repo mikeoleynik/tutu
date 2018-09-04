@@ -1,28 +1,17 @@
-== README
+Аналог сайта поиска ж/д билетов [tutu.ru](https://www.tutu.ru)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Технологии: RoR, javascript.
 
-Things you may want to cover:
+Особенности: Devise, STI, отправка сообщений пользователю, Bootstrap, Postmark
 
-* Ruby version
+Процес:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Была реализована админка для управления маршрутами, станциями, вагонами.
+* Создана эмуляция покупки билетов
+* Реализован сложный поиск билетов
+* Добавил локализацию в проект.
+* Добавил индексы на все внешние ключи и другие поля, по которым происходит поиск в БД
+* Реализовал отправку письма пользователю при покупке билета. При отмене покупки билета, пользователю высылается уведомление об этом на email.
+* Развернул приложение на heroku.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
